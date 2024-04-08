@@ -4,136 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stat Calculator</title>
-    <style>
-        :root {
-            --darkGrey: rgb(63, 63, 63);
-            --darkerGrey: rgb(40, 40, 40);
-            --lightGrey: rbg(100, 100, 100);
-        }
-
-        .hidden {
-            display: none !important;
-        }
-        
-        .outter {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-
-        .primary-container{
-            width: 35%;
-            height: 900px;
-        }
-
-        .secondary-container {
-            
-            background-color: black;
-            height: 877px;
-
-        }
-        
-
-
-        #img {
-            height: auto;
-            width: 100%;
-        }
-        
-        .dummy {
-            margin-left: 10%;
-            margin-right: 10%;
-            height: 60%;
-            width: auto;
-            margin: auto;
-            display: block;
-        }
-
-        body {
-            background-color: grey;
-        }
-
-        #gsm {
-
-            height: 32%;
-            background-color: var(--darkGrey);
-            color:white;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gsm-row {
-            display: flex;
-            flex: 1;
-        }
-
-        .dropdown-content {
-            color: white;
-            background-color: black;
-            display: block;
-            width: 20%;
-            text-align: center;
-            overflow-y:scroll;
-            height: 100px;
-        }
-
-        .dropdown-button {
-            appearance: none;
-            background-color: var(--darkerGrey);
-            color: lightgrey;
-            margin: 5px;
-            flex: 1;
-            text-align: center;
-        }
-
-        .dropdown-button:hover {
-            background-color: var(--darkGrey);
-        }
-
-        .list-item {
-            background-color: white !important;
-        }
-
-        .rings {
-            appearance: none;
-            background-color: var(--darkerGrey);
-            color: lightgrey;
-            margin:5px;
-            flex: 1;
-            text-align: center;
-        }
-
-        .damage-output {
-            margin: 5%;
-            border: 8px solid var(--darkGrey);
-            display: block;
-            height: 30%;
-            width: auto;
-            background-color: var(--darkerGrey);
-        }
-
-        .tablinks {
-            height: 30px;
-            background-color: var(--darkerGrey);
-            color: lightgrey;
-            align-items: center;
-            width: 65px;
-        }
-
-        .tablinks:hover {
-            appearance: none;
-            background-color: var(--lightGrey);
-        }
-
-        .tabs {
-            text-align: center;
-            padding-left: 5px;
-            padding-bottom: 3px;
-            padding-top: 3px;
-            background-color: var(--darkGrey);
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="outter">
@@ -182,9 +53,9 @@
         </div>
         <div class="primary-container">
             <!--Tabs-->
-            <div class="tabs">
-                <button class="tablinks" onclick="openTab(event, 'Dummy')">Dummy</button>
-                <button class="tablinks" onclick="openTab(event, 'Stats')">Stats</button>
+            <div class="tabs" tab-buttons>
+                <button class="tablinks" tab-target="#Dummy">Dummy</button>
+                <button class="tablinks" tab-target="#Stats">Stats</button>
             </div>
             <!--Dummy Box-->
             <div id="Dummy" class="secondary-container">
@@ -194,22 +65,21 @@
                 </div>
             </div>
             <!--Stats Page-->
-            <div id="Stats" class="secondary-container" style="display: none">
+            <div id="Stats" class="secondary-container">
             </div>
         </div>
     </div>
+    <script src="js/tabs.js" ></script>
     <script>
+
+        /*
+        Currently Unused
         const dropdownContent = document.querySelector(".dropdown-content");
         document.querySelector(".dropdown-button").addEventListener("click", function(){
             dropdownContent.classList.toggle("hidden");
         });
+        */
 
-        $(document).ready(function() {
-            $('.select1').toggle();
-            $(document).click(function(e) {
-        $('.select1').attr('size',0);
-        });
-        });
 
         //Trying OOP Stuff
 
@@ -227,23 +97,6 @@
         }
 
         const roq = new ring()
-
-
-        //Tabs Stuff
-
-        function openTab(evt, pageName) {
-            let i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("secondary-container");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-            document.getElementById(pageName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
     </script>
 </body>
 </html>

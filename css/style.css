@@ -1,0 +1,127 @@
+:root {
+    --darkGrey: rgb(63, 63, 63);
+    --darkerGrey: rgb(40, 40, 40);
+    --lightGrey: rbg(100, 100, 100);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.outter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.primary-container{
+    width: 35%;
+    height: 900px;
+}
+
+.secondary-container {
+    
+    background-color: black;
+    height: 877px;
+
+}
+
+
+
+#img {
+    height: auto;
+    width: 100%;
+}
+
+.dummy {
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 60%;
+    width: auto;
+    margin: auto;
+    display: block;
+}
+
+body {
+    background-color: grey;
+}
+
+#gsm {
+
+    height: 32%;
+    background-color: var(--darkGrey);
+    color:white;
+    display: flex;
+    flex-direction: column;
+}
+
+.gsm-row {
+    display: flex;
+    flex: 1;
+}
+
+.dropdown-content {
+    color: white;
+    background-color: black;
+    display: block;
+    width: 20%;
+    text-align: center;
+    overflow-y:scroll;
+    height: 100px;
+}
+
+.dropdown-button {
+    appearance: none;
+    background-color: var(--darkerGrey);
+    color: lightgrey;
+    margin: 5px;
+    flex: 1;
+    text-align: center;
+}
+
+.dropdown-button:hover {
+    background-color: var(--darkGrey);
+}
+
+.list-item {
+    background-color: white !important;
+}
+
+.rings {
+    appearance: none;
+    background-color: var(--darkerGrey);
+    color: lightgrey;
+    margin:5px;
+    flex: 1;
+    text-align: center;
+}
+
+.damage-output {
+    margin: 5%;
+    border: 8px solid var(--darkGrey);
+    display: block;
+    height: 30%;
+    width: auto;
+    background-color: var(--darkerGrey);
+}
+
+.tablinks {
+    height: 30px;
+    background-color: var(--darkerGrey);
+    color: lightgrey;
+    align-items: center;
+    width: 65px;
+}
+
+.tablinks:hover {
+    appearance: none;
+    background-color: var(--lightGrey);
+}
+
+.tabs {
+    text-align: center;
+    padding-left: 5px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    background-color: var(--darkGrey);
+}
